@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'package_demo_view.dart';
+
 import '../providers/product_provider.dart';
 import '../widgets/product_card.dart';
 import 'location_view.dart';
@@ -42,9 +44,17 @@ class _ProductListViewState extends State<ProductListView> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (_) => const LocationView(),
-                ),
+                MaterialPageRoute(builder: (_) => const LocationView()),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.extension),
+            tooltip: 'Packages & Plugins',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const PackageDemoView()),
               );
             },
           ),
@@ -112,4 +122,3 @@ class _ProductListViewState extends State<ProductListView> {
     );
   }
 }
-
